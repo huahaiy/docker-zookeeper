@@ -19,7 +19,7 @@ RUN \
   rm /tmp/zookeeper.tgz && \
   \
   \
-  echo "===> setup zookeeper..."  
+  echo "===> setup zookeeper..."  && \
   cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg && \
   mkdir -p /tmp/zookeeper 
 
