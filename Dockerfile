@@ -10,25 +10,20 @@ MAINTAINER Huahai Yang <hyang@juji.io>
 
 RUN \
   echo "===> download zookeeper..."  && \ 
-  wget -O /tmp/zookeeper.tgz \
-  http://www.motorlogy.com/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz && \   
-  \
-  \
-  echo "===> install zookeeper..."  && \ 
-  tar xfz /tmp/zookeeper.tgz -C /opt && \
-  rm /tmp/zookeeper.tgz && \
+  wget -q -O - http://www.motorlogy.com/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz | \   
+  tar -xzf - -C /opt && \
   \
   \
   echo "===> setup zookeeper..."  && \
-  cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg && \
+  cp /opt/zookeeper-3.4.6/conf/zoo_sample.cfg /opt/zookeeper-3.4.6/conf/zoo.cfg && \
   mkdir -p /tmp/zookeeper 
 
 EXPOSE 2181 2888 3888
 
-WORKDIR /opt/zookeeper
+WORKDIR /opt/zookeeper-3.4.6
 
-VOLUME ["/opt/zookeeper", "/tmp/zookeeper"]
+VOLUME ["/opt/zookeeper-3.4.6/conf", "/tmp/zookeeper"]
 
-ENTRYPOINT ["/opt/zookeeper/bin/zkServer.sh"]
+ENTRYPOINT ["/opt/zookeeper-3.4.6/bin/zkServer.sh"]
 
 CMD ["start-foreground"]
