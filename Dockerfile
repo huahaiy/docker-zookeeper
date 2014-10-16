@@ -10,7 +10,8 @@ MAINTAINER Huahai Yang <hyang@juji.io>
 
 RUN \
   echo "===> download zookeeper..."  && \ 
-  wget -q -O - http://www.motorlogy.com/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz | \   
+  wget -q -O - \
+  http://www.motorlogy.com/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz | \   
   tar -xzf - -C /opt && \
   \
   \
