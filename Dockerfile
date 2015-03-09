@@ -1,7 +1,7 @@
 #
 # Run Apache Zookeeper cluster in docker
 #
-# Version     0.1
+# Version     0.2
 #
 
 FROM huahaiy/oracle-java
@@ -19,12 +19,15 @@ RUN \
   cp /opt/zookeeper-3.4.6/conf/zoo_sample.cfg /opt/zookeeper-3.4.6/conf/zoo.cfg && \
   mkdir -p /tmp/zookeeper 
 
+COPY ./docker-entrypoint.sh /
+
 EXPOSE 2181 2888 3888
 
 WORKDIR /opt/zookeeper-3.4.6
 
 VOLUME ["/opt/zookeeper-3.4.6/conf", "/tmp/zookeeper"]
 
-ENTRYPOINT ["/opt/zookeeper-3.4.6/bin/zkServer.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["start-foreground"]
+
