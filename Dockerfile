@@ -1,5 +1,5 @@
 #
-# Run Apache Zookeeper cluster in docker
+# Run multi-node Apache Zookeeper cluster in a set of docker containers
 #
 # Version     0.2
 #
