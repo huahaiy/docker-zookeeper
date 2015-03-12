@@ -2,14 +2,9 @@
 
 set -e
 
-echo $1
-
 if [ "$1" = 'start-foreground' ]; then
 
-  if [ -z $ZOO_NODE_ID ] ; then
-    echo 'Please specify ZOO_NODE_ID, an integer between 1 and 255'
-    exit -1
-  fi
+  ZOO_NODE_ID=${ZOO_NODE_ID:-"1"}
 
   echo "$ZOO_NODE_ID" > /tmp/zookeeper/myid
 

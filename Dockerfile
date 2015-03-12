@@ -1,7 +1,7 @@
 #
-# Run multi-node Apache Zookeeper cluster in a set of docker containers
+# Run Apache Zookeeper in a docker container, support cross-node cluster 
 #
-# Version     0.2
+# Version     0.3
 #
 
 FROM huahaiy/oracle-java
