@@ -11,7 +11,7 @@ MAINTAINER Huahai Yang <hyang@juji-inc.com>
 RUN \
   echo "===> download zookeeper..."  && \ 
   wget -q -O - \
-  http://www.motorlogy.com/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz | \   
+  http://apache.spinellicreations.com/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz | \
   tar -xzf - -C /opt && \
   \
   \
