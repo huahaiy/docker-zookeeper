@@ -11,21 +11,21 @@ MAINTAINER Huahai Yang <hyang@juji-inc.com>
 RUN \
   echo "===> download zookeeper..."  && \ 
   wget -q -O - \
-  http://apache.spinellicreations.com/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz | \
+  http://apache.spinellicreations.com/zookeeper/zookeeper-3.4.8/zookeeper-3.4.8.tar.gz | \
   tar -xzf - -C /opt && \
   \
   \
   echo "===> setup zookeeper..."  && \
-  cp /opt/zookeeper-3.4.6/conf/zoo_sample.cfg /opt/zookeeper-3.4.6/conf/zoo.cfg && \
+  cp /opt/zookeeper-3.4.8/conf/zoo_sample.cfg /opt/zookeeper-3.4.8/conf/zoo.cfg && \
   mkdir -p /tmp/zookeeper 
 
 COPY ./docker-entrypoint.sh /
 
 EXPOSE 2181 2888 3888
 
-WORKDIR /opt/zookeeper-3.4.6
+WORKDIR /opt/zookeeper-3.4.8
 
-VOLUME ["/opt/zookeeper-3.4.6/conf", "/tmp/zookeeper"]
+VOLUME ["/opt/zookeeper-3.4.8/conf", "/tmp/zookeeper"]
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 

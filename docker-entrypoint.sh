@@ -16,13 +16,13 @@ if [ "$1" = 'start-foreground' ]; then
       else
         ip=`echo $VAR | sed -r "s/.*=(.*)/\1/g"`
       fi
-      echo "server.$n=$ip:2888:3888" >> /opt/zookeeper-3.4.6/conf/zoo.cfg
+      echo "server.$n=$ip:2888:3888" >> /opt/zookeeper-3.4.8/conf/zoo.cfg
     fi
   done
 
-  cat /opt/zookeeper-3.4.6/conf/zoo.cfg
+  cat /opt/zookeeper-3.4.8/conf/zoo.cfg
 
-  exec /opt/zookeeper-3.4.6/bin/zkServer.sh "$@"
+  exec /opt/zookeeper-3.4.8/bin/zkServer.sh "$@"
 
 fi
 
