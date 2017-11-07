@@ -1,7 +1,7 @@
 docker-zookeeper
 ================
 
-Docker image for Apache ZooKeeper 3.4.8 that supports a multi-node cluster setup. 
+Docker image for Apache ZooKeeper 3.4.10 that supports a multi-node cluster setup. 
 
 `dataDir` is set to `/tmp/zookeeper` and is exposed as a volume, to be linked to a host directory. 
 
