@@ -1,7 +1,7 @@
 #
 # Run Apache Zookeeper in a docker container, support cross-node cluster 
 #
-# Version     0.3
+# Version     0.4
 #
 
 FROM huahaiy/oracle-java
