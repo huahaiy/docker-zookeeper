@@ -13,19 +13,20 @@ RUN \
   wget -q -O - \
   http://archive.apache.org/dist/zookeeper/zookeeper-3.6.1/apache-zookeeper-3.6.1-bin.tar.gz | \
   tar -xzf - -C /opt && \
+  mv /opt/apache-zookeeper-3.6.1-bin /opt/zookeeper && \
   \
   \
   echo "===> setup zookeeper..."  && \
-  cp /opt/apache-zookeeper-3.6.1-bin/conf/zoo_sample.cfg /opt/apache-zookeeper-3.6.1-bin/conf/zoo.cfg && \
+  cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg && \
   mkdir -p /tmp/zookeeper 
 
 COPY ./docker-entrypoint.sh /
 
 EXPOSE 2181 2888 3888
 
-WORKDIR /opt/apache-zookeeper-3.6.1-bin
+WORKDIR /opt/zookeeper
 
-VOLUME ["/opt/apache-zookeeper-3.6.1-bin/conf", "/tmp/zookeeper"]
+VOLUME ["/opt/zookeeper/conf", "/tmp/zookeeper"]
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
