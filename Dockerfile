@@ -4,7 +4,7 @@
 # Version     0.5
 #
 
-FROM huahaiy/oracle-java
+FROM huahaiy/java
 
 MAINTAINER Huahai Yang <hyang@juji-inc.com>
 
